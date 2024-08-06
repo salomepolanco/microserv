@@ -1,0 +1,26 @@
+services:
+  mysql_db1:
+    image: davdocker22/cotizador_bdd1
+    container_name: mysql_db1
+    environment:
+      MYSQL_ROOT_PASSWORD: Abue2679522
+      MYSQL_DATABASE: cotizadorbdd1
+    ports:
+      - "3309:3306"
+    volumes:
+      - mysql_db1_data:/var/lib/mysql
+
+  mysql_db2:
+    image: davdocker22/cotizador_bdd2
+    container_name: mysql_db2
+    environment:
+      MYSQL_ROOT_PASSWORD: Abue2679522
+      MYSQL_DATABASE: cotizadorbdd2
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_db2_data:/var/lib/mysql
+
+volumes:
+  mysql_db1_data:
+  mysql_db2_data:
